@@ -1,0 +1,19 @@
+import { Trap } from "@drosera/sdk";
+import { formatEth } from "../utils/formatter.js";
+
+export default new Trap({
+  name: "ETHLargeTransferTrap",
+  description: "Detects transfers over 2 ETH and notifies via Discord.",
+
+  async onEvent(event, ctx) {
+    if (event.type === "transaction" && event.value > 2e18) {
+      const amount = formatEth(event.value);
+
+      ctx.log(`🚀 Big Transfer: ${event.from} → ${event.to} | ${amount} ETH`);
+
+      await ctx.notify("discord", {
+        content: `🔥 Alert: ${amount} ETH sent from ${event.from} to ${event.to}`
+      });
+    }
+  }
+});
