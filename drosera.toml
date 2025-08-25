@@ -1,0 +1,11 @@
+name = "ETHLargeTransferTrap"
+description = "Trap that triggers on ETH transfers larger than 2 ETH."
+version = "1.1.0"
+author = "YOUR NAME"
+network = "ethereum-mainnet"
+
+[events]
+type = ["transaction"]
+
+[actions]
+notify = ["discord"]
