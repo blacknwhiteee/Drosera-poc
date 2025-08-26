@@ -1,0 +1,26 @@
+# Generated via Cargo
+# contains compiled files + executables
+debug/
+target/
+
+# Cargo.lock: keep it for libraries, remove for binaries
+# More info: https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
+Cargo.lock
+
+# Rustfmt backup files
+**/*.rs.bk
+
+# MSVC (Windows rustc builds) → debugging info
+*.pdb
+
+# Local environment + cache
+.env
+cache/
+out/
+broadcast/
+
+# Frontend dependencies
+node_modules/
+
+# macOS system file
+.DS_Store
